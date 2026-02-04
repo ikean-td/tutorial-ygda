@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3u5qikbx8exk"]
+
+[ext_resource type="Texture2D" uid="uid://cyo5rabbl4oqc" path="res://assets/youwin.png" id="1_47rfs"]
+
+[node name="winscreen" type="Node2D"]
+
+[node name="Youwin" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(481.00003, 278)
+scale = Vector2(0.8394097, 0.89506173)
+texture = ExtResource("1_47rfs")

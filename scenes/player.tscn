@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw25kpdu1fmwr"]
+
+[ext_resource type="Texture2D" uid="uid://buhdyigu7if7g" path="res://assets/idle c.png" id="1_4flbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(19, 33)
+
+[node name="el charcterico" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_onrkg")

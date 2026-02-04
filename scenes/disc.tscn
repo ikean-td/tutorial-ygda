@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://ktpj1xw5uuni"]
+
+[ext_resource type="Script" uid="uid://2c36ctmmeipo" path="res://scenes/disc.gd" id="1_rnd5p"]
+[ext_resource type="Texture2D" uid="uid://bqpwswbbw8r4s" path="res://assets/disc2.png" id="1_wy34o"]
+[ext_resource type="Texture2D" uid="uid://tm60y4e5oy0i" path="res://assets/disc.png" id="2_y4gon"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3kgxp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wy34o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y4gon")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pi8hj"]
+radius = 8.0
+
+[node name="disc" type="Area2D"]
+script = ExtResource("1_rnd5p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3kgxp")
+autoplay = "default"
+frame_progress = 0.07115892
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pi8hj")
+
+[node name="lifetime" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="lifetime" to="." method="_times_up"]
