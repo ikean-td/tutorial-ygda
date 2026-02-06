@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cldn1fid05501"]
+
+[ext_resource type="Script" uid="uid://didai0l2cypa7" path="res://scenes/dash.gd" id="1_qeljt"]
+[ext_resource type="Texture2D" uid="uid://c3h5bd2mxbsm" path="res://assets/power_ups.png" id="2_6xhjm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcqqu"]
+size = Vector2(16, 16)
+
+[node name="dash" type="Area2D"]
+script = ExtResource("1_qeljt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6xhjm")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vcqqu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
